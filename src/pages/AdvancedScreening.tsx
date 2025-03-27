@@ -13,23 +13,28 @@ const AdvancedScreening = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6"> {/* Increased gap */}
         <Link to="/bmi-calculator" className="w-full flex flex-col items-center"> {/* Added flex for centering text */}
           <Button className="w-full bg-[#00838F] text-white hover:bg-[#006971]">BMI Calculator</Button>
-          <p className="text-sm text-gray-600 mt-2 text-center">Calculate your Body Mass Index.</p>
+          <img src="/bmi.png" alt="BMI Chart" className="mt-2 h-24 w-auto object-contain" /> {/* Added image */}
+          <p className="text-sm text-gray-600 mt-2 text-center">Calculate your Body Mass Index (BMI) to understand your weight status, which can be a factor in overall health and TB risk.</p>
         </Link>
         <Link to="/tb-diagnostic" className="w-full flex flex-col items-center"> {/* Added flex for centering text */}
           <Button className="w-full bg-[#00838F] text-white hover:bg-[#006971]">TB Diagnostic</Button>
-          <p className="text-sm text-gray-600 mt-2 text-center">Assess TB risk based on symptoms and history.</p>
+          <img src="/tuberculosis.png" alt="TB Bacteria" className="mt-2 h-24 w-auto object-contain" /> {/* Added image */}
+          <p className="text-sm text-gray-600 mt-2 text-center">Assess your potential risk for Tuberculosis (TB) by answering questions about your symptoms, medical history, and potential exposure.</p>
         </Link>
         <Link to="/chest-xray" className="w-full flex flex-col items-center"> {/* Added flex for centering text */}
           <Button className="w-full bg-[#00838F] text-white hover:bg-[#006971]">Chest X-ray</Button>
-          <p className="text-sm text-gray-600 mt-2 text-center">Analyze chest X-ray images for TB signs.</p>
+          <img src="/medical.png" alt="Chest X-ray Analysis" className="mt-2 h-24 w-auto object-contain" /> {/* Added image */}
+          <p className="text-sm text-gray-600 mt-2 text-center">Utilize our AI-powered tool to analyze uploaded chest X-ray images for potential signs indicative of Tuberculosis infection.</p>
         </Link>
         <Link to="/qna" className="w-full flex flex-col items-center"> {/* Added flex for centering text */}
           <Button className="w-full bg-[#00838F] text-white hover:bg-[#006971]">QnA with TBControl</Button>
-          <p className="text-sm text-gray-600 mt-2 text-center">Ask questions about TB to our AI assistant.</p>
+          <img src="/chatbot.png" alt="Chatbot Icon" className="mt-2 h-24 w-auto object-contain" /> {/* Added image */}
+          <p className="text-sm text-gray-600 mt-2 text-center">Ask our intelligent AI assistant any questions you have about Tuberculosis, its symptoms, transmission, prevention, and treatment.</p>
         </Link>
         <Link to="/mdr-tb" className="w-full flex flex-col items-center"> {/* Added flex for centering text */}
           <Button className="w-full bg-[#00838F] text-white hover:bg-[#006971]">MDR-TB</Button>
-          <p className="text-sm text-gray-600 mt-2 text-center">Info & tools for Multi-Drug Resistant TB.</p>
+          <img src="/tuberculosis (1).png" alt="MDR-TB Info" className="mt-2 h-24 w-auto object-contain" /> {/* Added image */}
+          <p className="text-sm text-gray-600 mt-2 text-center">Access specific information and resources related to Multi-Drug Resistant Tuberculosis (MDR-TB), including its causes, diagnosis, and complex treatment protocols.</p>
         </Link>
       </div>
     </div>

@@ -36,9 +36,10 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center">
-             <span className="text-2xl font-bold text-secondary">TBControl</span>
-           </Link>
+            <Link to="/" className="flex-shrink-0 flex items-center gap-2"> {/* Added gap-2 */}
+              <img src="/new fav logo.png" alt="TBControl Logo" className="h-8 w-auto" /> {/* Added logo */}
+              <span className="text-2xl font-bold text-secondary">TBControl</span>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}

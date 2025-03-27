@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { ArrowRight, Activity, Users, Calendar, ChartBar, Heart, AlertCircle, Linkedin } from "lucide-react"; // Added Linkedin icon
+import { ArrowRight, Activity, Users, Calendar, ChartBar, Heart, AlertCircle, Linkedin, Stethoscope } from "lucide-react"; // Added Linkedin and Stethoscope icons
 import {
   Carousel,
   CarouselContent,
@@ -245,8 +245,60 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Advanced Screening Tools Preview Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+              Advanced Screening Tools Preview
+            </h2>
+            <p className="mt-4 max-w-3xl mx-auto text-lg text-gray-600">
+              Explore our specialized tools for a more in-depth health assessment.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {/* BMI Calculator Preview */}
+            <div className="flex flex-col items-center p-4 border rounded-lg shadow-sm bg-gray-50">
+              <img src="/bmi.png" alt="BMI Chart" className="h-24 w-auto object-contain mb-2" />
+              <h4 className="font-semibold text-center mb-1">BMI Calculator</h4>
+              <p className="text-sm text-gray-600 text-center">Calculate your Body Mass Index (BMI) to understand your weight status.</p>
+            </div>
+            {/* TB Diagnostic Preview */}
+            <div className="flex flex-col items-center p-4 border rounded-lg shadow-sm bg-gray-50">
+              <img src="/tuberculosis.png" alt="TB Bacteria" className="h-24 w-auto object-contain mb-2" />
+              <h4 className="font-semibold text-center mb-1">TB Diagnostic</h4>
+              <p className="text-sm text-gray-600 text-center">Assess your potential risk for Tuberculosis (TB) based on symptoms and history.</p>
+            </div>
+            {/* Chest X-ray Preview */}
+            <div className="flex flex-col items-center p-4 border rounded-lg shadow-sm bg-gray-50">
+              <img src="/medical.png" alt="Chest X-ray Analysis" className="h-24 w-auto object-contain mb-2" />
+              <h4 className="font-semibold text-center mb-1">Chest X-ray</h4>
+              <p className="text-sm text-gray-600 text-center">Utilize our AI-powered tool to analyze chest X-ray images for potential TB signs.</p>
+            </div>
+            {/* QnA with TBControl Preview */}
+            <div className="flex flex-col items-center p-4 border rounded-lg shadow-sm bg-gray-50">
+              <img src="/chatbot.png" alt="Chatbot Icon" className="h-24 w-auto object-contain mb-2" />
+              <h4 className="font-semibold text-center mb-1">QnA with TBControl</h4>
+              <p className="text-sm text-gray-600 text-center">Ask our AI assistant questions about Tuberculosis.</p>
+            </div>
+            {/* MDR-TB Preview */}
+            <div className="flex flex-col items-center p-4 border rounded-lg shadow-sm bg-gray-50">
+              <img src="/tuberculosis (1).png" alt="MDR-TB Info" className="h-24 w-auto object-contain mb-2" />
+              <h4 className="font-semibold text-center mb-1">MDR-TB</h4>
+              <p className="text-sm text-gray-600 text-center">Access specific information and resources related to Multi-Drug Resistant TB.</p>
+            </div>
+          </div>
+           <div className="text-center mt-8">
+             <Link to="/advanced-screening" className="inline-flex items-center px-6 py-3 text-lg font-semibold text-white bg-secondary rounded-lg hover:bg-secondary/90 transition-all">
+                Explore All Tools
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+           </div>
+        </div>
+      </section>
+
       {/* Author Section */}
-      <section className="py-20 bg-white"> {/* Similar styling to other sections */}
+      <section className="py-20 bg-gray-50"> {/* Changed background to gray-50 to alternate */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
@@ -264,7 +316,7 @@ const Index = () => {
               A third year undergraduate student majoring in Medicine at Islamic University of Indonesia. Deeply passionate about acquiring new knowledge and having diverse experiences. Aiming to enhance the health standards in Indonesia, bring about sustainable change, and create lasting positive impacts.
             </p>
             <a
-              href="https://www.linkedin.com/in/daivan-febri-juan-setiya/details/honors/"
+              href="https://www.linkedin.com/in/daivan-febri-juan-setiya/"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-4 py-2 text-base font-semibold text-white bg-secondary rounded-lg hover:bg-secondary/90 transition-all"
@@ -286,16 +338,16 @@ const features = [
     icon: Activity,
   },
   {
-    name: "Comprehensive Information",
+    name: "Advanced Screening Tools",
     description:
-      "Access reliable information about prevention, treatment, and management of TB.",
-    icon: Users,
+      "Utilize advanced tools like BMI calculation, diagnostic aids, and X-ray analysis for a deeper health assessment.",
+    icon: Stethoscope, // Changed icon to Stethoscope
   },
   {
-    name: "Treatment Monitoring",
+    name: "Health Facilities",
     description:
-      "Monitor treatment progress and medication schedules with ease.",
-    icon: Calendar,
+      "Find nearby health facilities that provide TB diagnosis and treatment services.",
+    icon: Users,
   },
 ];
 
