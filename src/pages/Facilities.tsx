@@ -57,23 +57,7 @@ const Facilities = () => {
                 Find nearby health facilities that provide TB diagnosis and treatment services
               </p>
               
-              <div className="relative max-w-xl mx-auto">
-                <div className="flex">
-                  <div className="relative flex-grow">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 h-5 w-5" />
-                    <Input
-                      type="text"
-                      placeholder="Search by name or location"
-                      className="pl-10 pr-4 py-3 rounded-l-lg w-full"
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                    />
-                  </div>
-                  <Button className="rounded-l-none bg-white text-secondary border border-input hover:bg-gray-100"> {/* Changed styling */}
-                    Search
-                  </Button>
-                </div>
-              </div>
+              {/* Search bar removed */}
             </div>
           </div>
         </section>

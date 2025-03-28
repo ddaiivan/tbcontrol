@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { ArrowRight, Activity, Users, Calendar, ChartBar, Heart, AlertCircle, Linkedin, Stethoscope } from "lucide-react"; // Added Linkedin and Stethoscope icons
+import { ArrowRight, Activity, Users, Calendar, ChartBar, Heart, AlertCircle, Linkedin, Stethoscope, Skull } from "lucide-react"; // Added Skull icon
 import {
   Carousel,
   CarouselContent,
@@ -10,10 +10,7 @@ import {
 } from "@/components/ui/carousel";
 import { 
   ChartContainer, 
-  ChartTooltip,
-  ChartTooltipContent
-} from "@/components/ui/chart";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts";
+} from "@/components/ui/chart"; // Removed unused imports
 
 const Index = () => {
   return (
@@ -58,40 +55,22 @@ const Index = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            {/* Statistics Chart - Adjusted for better responsiveness */}
-            <div className="bg-white p-6 rounded-xl shadow-sm border">
-              <h3 className="text-xl font-semibold mb-4">TB Prevalence in Indonesia</h3>
-              <div className="h-80">
-                <ChartContainer 
-                  className="h-full"
-                  config={{
-                    cases: { theme: { light: "#7e22ce", dark: "#c084fc" } },
-                    deaths: { theme: { light: "#e11d48", dark: "#fb7185" } }
-                  }}
-                >
-                  <ResponsiveContainer width="100%" height="100%">
-                    <BarChart
-                      data={tbStatistics}
-                      margin={{ top: 10, right: 5, left: 5, bottom: 20 }} // Adjusted left and right margins
-                    >
-                      <CartesianGrid strokeDasharray="3 3" />
-                      <XAxis dataKey="year" />
-                      <YAxis />
-                      <ChartTooltip 
-                        content={<ChartTooltipContent />}
-                      />
-                      <Bar dataKey="cases" name="TB Cases (thousands)" fill="var(--color-cases)" />
-                      <Bar dataKey="deaths" name="TB Deaths (thousands)" fill="var(--color-deaths)" />
-                    </BarChart>
-                  </ResponsiveContainer>
-                </ChartContainer>
+            {/* Incidence Image */}
+            <div className="bg-white p-6 rounded-xl shadow-sm border transition-transform duration-200 ease-in-out hover:scale-105"> {/* Added hover animation */}
+              <h3 className="text-xl font-semibold mb-4">Estimated number of incident TB cases in 2023, for countries with at least 100 000 incident cases</h3>
+              <div className="h-80 flex items-center justify-center"> {/* Added flex centering */}
+                <img 
+                  src="/incidence.jpg" 
+                  alt="TB Incidence in Indonesia" 
+                  className="w-full h-full object-cover" // Make image cover the container
+                />
               </div>
-              <p className="text-sm text-gray-500 mt-2">Data source: WHO Global TB Report</p>
+              <p className="text-sm text-gray-500 mt-2">Data source: WHO Global TB Report</p> {/* Kept data source, update if needed */}
             </div>
 
             {/* Key Statistics */}
             <div className="grid grid-cols-1 gap-4">
-              <div className="bg-white p-6 rounded-xl shadow-sm border">
+              <div className="bg-white p-6 rounded-xl shadow-sm border transition-transform duration-200 ease-in-out hover:scale-105"> {/* Added hover animation */}
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
                     <AlertCircle className="h-10 w-10 text-secondary" />
@@ -102,10 +81,10 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-sm border">
+              <div className="bg-white p-6 rounded-xl shadow-sm border transition-transform duration-200 ease-in-out hover:scale-105"> {/* Added hover animation */}
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
-                    <Heart className="h-10 w-10 text-secondary" />
+                    <Skull className="h-10 w-10 text-secondary" /> {/* Replaced Heart with Skull */}
                   </div>
                   <div className="ml-4">
                     <h3 className="text-lg font-semibold">Indonesia's Burden</h3>
@@ -113,7 +92,7 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-white p-6 rounded-xl shadow-sm border">
+              <div className="bg-white p-6 rounded-xl shadow-sm border transition-transform duration-200 ease-in-out hover:scale-105"> {/* Added hover animation */}
                 <div className="flex items-start">
                   <div className="flex-shrink-0">
                     <ChartBar className="h-10 w-10 text-secondary" />
@@ -258,31 +237,31 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {/* BMI Calculator Preview */}
-            <div className="flex flex-col items-center p-4 border rounded-lg shadow-sm bg-gray-50">
+            <div className="flex flex-col items-center p-4 border rounded-lg shadow-sm bg-gray-50 transition-transform duration-200 ease-in-out hover:scale-105"> {/* Added hover animation */}
               <img src="/bmi.png" alt="BMI Chart" className="h-24 w-auto object-contain mb-2" />
               <h4 className="font-semibold text-center mb-1">BMI Calculator</h4>
               <p className="text-sm text-gray-600 text-center">Calculate your Body Mass Index (BMI) to understand your weight status.</p>
             </div>
             {/* TB Diagnostic Preview */}
-            <div className="flex flex-col items-center p-4 border rounded-lg shadow-sm bg-gray-50">
+            <div className="flex flex-col items-center p-4 border rounded-lg shadow-sm bg-gray-50 transition-transform duration-200 ease-in-out hover:scale-105"> {/* Added hover animation */}
               <img src="/tuberculosis.png" alt="TB Bacteria" className="h-24 w-auto object-contain mb-2" />
               <h4 className="font-semibold text-center mb-1">TB Diagnostic</h4>
               <p className="text-sm text-gray-600 text-center">Assess your potential risk for Tuberculosis (TB) based on symptoms and history.</p>
             </div>
             {/* Chest X-ray Preview */}
-            <div className="flex flex-col items-center p-4 border rounded-lg shadow-sm bg-gray-50">
+            <div className="flex flex-col items-center p-4 border rounded-lg shadow-sm bg-gray-50 transition-transform duration-200 ease-in-out hover:scale-105"> {/* Added hover animation */}
               <img src="/medical.png" alt="Chest X-ray Analysis" className="h-24 w-auto object-contain mb-2" />
               <h4 className="font-semibold text-center mb-1">Chest X-ray</h4>
               <p className="text-sm text-gray-600 text-center">Utilize our AI-powered tool to analyze chest X-ray images for potential TB signs.</p>
             </div>
             {/* QnA with TBControl Preview */}
-            <div className="flex flex-col items-center p-4 border rounded-lg shadow-sm bg-gray-50">
+            <div className="flex flex-col items-center p-4 border rounded-lg shadow-sm bg-gray-50 transition-transform duration-200 ease-in-out hover:scale-105"> {/* Added hover animation */}
               <img src="/chatbot.png" alt="Chatbot Icon" className="h-24 w-auto object-contain mb-2" />
               <h4 className="font-semibold text-center mb-1">QnA with TBControl</h4>
               <p className="text-sm text-gray-600 text-center">Ask our AI assistant questions about Tuberculosis.</p>
             </div>
             {/* MDR-TB Preview */}
-            <div className="flex flex-col items-center p-4 border rounded-lg shadow-sm bg-gray-50">
+            <div className="flex flex-col items-center p-4 border rounded-lg shadow-sm bg-gray-50 transition-transform duration-200 ease-in-out hover:scale-105"> {/* Added hover animation */}
               <img src="/tuberculosis (1).png" alt="MDR-TB Info" className="h-24 w-auto object-contain mb-2" />
               <h4 className="font-semibold text-center mb-1">MDR-TB</h4>
               <p className="text-sm text-gray-600 text-center">Access specific information and resources related to Multi-Drug Resistant TB.</p>
@@ -351,12 +330,6 @@ const features = [
   },
 ];
 
-const tbStatistics = [
-  { year: "2018", cases: 845, deaths: 93 },
-  { year: "2019", cases: 842, deaths: 91 },
-  { year: "2020", cases: 824, deaths: 89 },
-  { year: "2021", cases: 815, deaths: 86 },
-  { year: "2022", cases: 795, deaths: 82 },
-];
+// Removed unused tbStatistics constant
 
 export default Index;
